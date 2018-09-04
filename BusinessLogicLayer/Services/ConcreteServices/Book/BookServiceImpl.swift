@@ -12,11 +12,11 @@ import Alamofire
 
 class BookServiceImpl: BookService {
 
-    func get() -> Promise<[Book]?> {
+    func get(pagination: Pagination) -> Promise<[Book]?> {
         return Promise {seal in
             request("https://hn.algolia.com/api/v1/search_by_date?tags=story",
                     method: .get,
-                    parameters: ["page": 0],
+                    parameters: pagination.toJSON(),
                     encoding: URLEncoding.default,
                     headers: nil)
                 .validate()

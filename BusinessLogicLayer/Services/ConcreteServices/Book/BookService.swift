@@ -11,5 +11,5 @@ import PromiseKit
 
 protocol BookService: APIErrorServise {
     
-    func get() -> Promise<[Book]?>
+    func get(pagination: Pagination) -> Promise<[Book]?>
 }

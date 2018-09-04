@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     fileprivate func getBooks() {
         
         self.pagination.isFetchingData = true
-        bookService.get()
+        bookService.get(pagination: pagination)
             .done { books in
                 guard let books = books else { return }
                 self.dataSource.append(contentsOf: books)

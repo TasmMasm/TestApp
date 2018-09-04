@@ -19,6 +19,7 @@ extension String {
         if date != nil {
             let formatter = DateFormatter()
             formatter.dateStyle = .full
+            formatter.timeStyle = .short
             let dateShort = formatter.string(from: date!)
             
             return dateShort
